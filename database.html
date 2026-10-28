@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database – EXPOSE</title>
+  <meta name="description" content="Filter classified cases of UN sanctions evasion documented by the Panels of Experts.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/database-coded.css">
+</head>
+<body data-page="database">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="EXPOSE home"><img src="assets/logo.svg" alt="EXPOSE"></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu">&#9776; Menu</button>
+      <ul id="menu" class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="evasion-types.html">Evasion types</a></li>
+        <li><a href="database.html" aria-current="page">Database</a></li>
+        <li><a href="countries.html">Countries</a></li>
+        <li class="cta"><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <div class="tagline">EXPOSE &middot; Experts Panels on Sanctions Evasion</div>
+        <h1>The evasion database</h1>
+        <p class="lead">Explore the coded evidence for 18 sanctions cases across 69 episodes. Filter by variable, strategy and tactic, and read the complete report excerpts.</p>
+      </div>
+    </section>
+
+    <section style="padding-top:2.4rem">
+      <div class="container">
+        <p class="notice"><strong>18 cases · 69 episodes.</strong> Coded examples transcribed from the 69 supplied research documents. The Somalia case includes actors predating Al-Shabaab. Episode dates and coding follow those documents. Report dates may fall outside the assigned episode. Blank variables mean no example supplied, not proof of no evasion. Missing or unspecified strategies remain marked “Strategy not coded”. Additional source coding notes are preserved in the details. Episode 12.3 has blank metadata; its dates remain unspecified. References are extracted from the supplied text; the original reports have not been independently checked.</p>
+        <div class="db-layout">
+          <aside class="filters" aria-label="Filters">
+            <h3>Search examples</h3><label for="q">Keyword</label><input id="q" type="text" placeholder="Search the full text and coding">
+            <h3>Record type</h3><select id="status" aria-label="Record type"></select>
+            <h3>Case</h3><select id="case" aria-label="Case"></select>
+            <h3>Episode</h3><select id="episode" aria-label="Episode"></select>
+            <h3>Goods / Money / Services / Other</h3><select id="group" aria-label="Variable group"></select>
+            <h3>Variable</h3><select id="variable" aria-label="Variable"></select>
+            <h3>Strategy</h3><select id="strategy" aria-label="Strategy"></select>
+            <h3>Tactic</h3><select id="tactic" aria-label="Tactic"></select>
+            <h3>Report year</h3><select id="year" aria-label="Report year"></select>
+            <div class="row"><button id="clear" class="btn btn-outline btn-sm">Clear filters</button></div>
+          </aside>
+          <div>
+            <p id="episode-info"></p>
+            <div class="results-bar"><span id="count" class="count" aria-live="polite"></span>
+              <span><label for="sort">Sort by</label><select id="sort"><option value="source">Episode and source order</option><option value="newest">Report year newest first</option><option value="oldest">Report year oldest first</option></select></span>
+              <button id="csv" class="btn btn-dark btn-sm">Download filtered CSV</button>
+            </div>
+            <p>One card represents one source row. “No violations reported” statements are identified separately and are not counted as evasion examples. Identical excerpts assigned to several variables or episodes remain separate records.</p>
+            <div id="cases" class="cases"></div>
+            <button id="more" class="btn btn-outline btn-sm" style="margin-top:1rem">Show more examples</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="foot">
+        <div><img src="assets/logo.svg" alt="EXPOSE"><p>Experts Panels on Sanctions Evasion. A research project by Ana, Francesco and Irene, University of Groningen.</p></div>
+        <div><h4>Explore</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About us</a></li><li><a href="evasion-types.html">Evasion types</a></li><li><a href="database.html">Database</a></li>
+        <li><a href="countries.html">Countries</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h4>Sources</h4><p style="font-size:.9rem">Cases are compiled from UN Panel of Experts reports and public reporting on them. Always check the original UN documents.</p></div>
+      </div>
+      <div class="legal"><span>&copy; <span data-year></span> EXPOSE project</span><span>Not an official UN website.</span></div>
+    </div>
+  </footer>
+
+  <script src="data/coded-cases.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/database-coded.js"></script>
+</body>
+</html>
+
